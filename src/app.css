@@ -1,0 +1,167 @@
+/* ─────────────────────────────────────────────
+   Design tokens
+───────────────────────────────────────────── */
+:root {
+	/* Dark foundation */
+	--color-void:    #09090D;
+	--color-charcoal:#15131A;
+	--color-plum:    #211724;
+	--color-wine:    #541D35;
+	--color-burg:    #702A49;
+
+	/* Trans-flag highlights */
+	--color-blue:    #5BCEFA;
+	--color-pink:    #F5A9B8;
+	--color-white:   #FFFFFF;
+
+	/* Accents */
+	--color-lavender:#C9B8D8;
+	--color-silver:  #A8A8B3;
+	--color-cream:   #F0E6D3;
+	--color-dim:     rgba(255,255,255,0.06);
+
+	/* Typography */
+	--font-serif: 'Playfair Display', Georgia, serif;
+	--font-sans:  'Inter', system-ui, sans-serif;
+	--font-mono:  'Space Mono', 'Courier New', monospace;
+
+	/* Spacing scale */
+	--space-xs:  0.25rem;
+	--space-sm:  0.5rem;
+	--space-md:  1rem;
+	--space-lg:  2rem;
+	--space-xl:  4rem;
+	--space-2xl: 8rem;
+
+	/* Motion */
+	--ease-smooth: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+	--ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+	/* Glows */
+	--glow-pink: 0 0 24px rgba(245, 169, 184, 0.35);
+	--glow-blue: 0 0 24px rgba(91, 206, 250, 0.35);
+	--glow-wine: 0 0 32px rgba(112, 42, 73, 0.5);
+}
+
+/* ─────────────────────────────────────────────
+   Reset & base
+───────────────────────────────────────────── */
+*, *::before, *::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	scroll-behavior: smooth;
+	font-size: 16px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	html { scroll-behavior: auto; }
+	*, *::before, *::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+	}
+}
+
+body {
+	background-color: var(--color-void);
+	color: var(--color-silver);
+	font-family: var(--font-sans);
+	font-weight: 300;
+	line-height: 1.7;
+	-webkit-font-smoothing: antialiased;
+	cursor: none;
+	overflow-x: hidden;
+}
+
+/* Restore cursor on touch devices */
+@media (hover: none) {
+	body { cursor: auto; }
+}
+
+/* ─────────────────────────────────────────────
+   Typography helpers
+───────────────────────────────────────────── */
+h1, h2, h3, h4 {
+	font-family: var(--font-serif);
+	font-weight: 600;
+	line-height: 1.2;
+	color: var(--color-white);
+}
+
+a {
+	color: var(--color-pink);
+	text-decoration: none;
+	transition: color 0.2s var(--ease-smooth);
+}
+
+a:hover, a:focus-visible {
+	color: var(--color-blue);
+}
+
+:focus-visible {
+	outline: 2px solid var(--color-pink);
+	outline-offset: 3px;
+	border-radius: 2px;
+}
+
+/* ─────────────────────────────────────────────
+   Utility classes
+───────────────────────────────────────────── */
+.mono {
+	font-family: var(--font-mono);
+	font-size: 0.75rem;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+}
+
+.section-label {
+	font-family: var(--font-mono);
+	font-size: 0.65rem;
+	letter-spacing: 0.2em;
+	text-transform: uppercase;
+	color: var(--color-pink);
+	opacity: 0.7;
+}
+
+.fade-in {
+	opacity: 0;
+	transform: translateY(20px);
+	transition: opacity 0.8s var(--ease-smooth), transform 0.8s var(--ease-smooth);
+}
+
+.fade-in.visible {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+/* ─────────────────────────────────────────────
+   Scrollbar
+───────────────────────────────────────────── */
+::-webkit-scrollbar {
+	width: 6px;
+}
+
+::-webkit-scrollbar-track {
+	background: var(--color-void);
+}
+
+::-webkit-scrollbar-thumb {
+	background: var(--color-wine);
+	border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: var(--color-burg);
+}
+
+/* ─────────────────────────────────────────────
+   Selection
+───────────────────────────────────────────── */
+::selection {
+	background: rgba(245, 169, 184, 0.25);
+	color: var(--color-white);
+}
