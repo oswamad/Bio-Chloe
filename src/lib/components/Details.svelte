@@ -32,9 +32,9 @@
 <section bind:this={section} id="details" aria-labelledby="details-heading">
 	<div class="container">
 		<div class="header fade-in" class:visible>
-			<span class="section-label">// 007 · Small Details</span>
-			<h2 id="details-heading">The constellation<br />of <em>smaller truths</em></h2>
-			<p class="subtitle">Hover the stars.</p>
+			<span class="section-label">// 007 · small details</span>
+			<h2 id="details-heading">a constellation<br />of <em>smaller truths</em></h2>
+			<p class="subtitle">hover the stars.</p>
 		</div>
 
 		<div class="constellation-wrap fade-in" class:visible style="transition-delay: 0.2s">
@@ -93,7 +93,9 @@
 <style>
 	section {
 		padding: var(--space-2xl) var(--space-lg);
-		background: linear-gradient(180deg, var(--color-plum) 0%, var(--color-charcoal) 100%);
+		background:
+			linear-gradient(180deg, rgba(91,206,250,0.38) 0%, rgba(91,206,250,0.48) 100%),
+			linear-gradient(180deg, var(--color-plum) 0%, var(--color-charcoal) 100%);
 		position: relative;
 	}
 

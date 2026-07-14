@@ -28,7 +28,7 @@
 
 	<div class="container">
 		<div class="voice-inner fade-in" class:visible>
-			<span class="section-label">// 004 · Voice & Identity</span>
+			<span class="section-label">// 004 · voice & identity</span>
 			<h2 id="voice-heading">{voice.heading}</h2>
 			<blockquote>
 				<p>{voice.body}</p>

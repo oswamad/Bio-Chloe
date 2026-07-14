@@ -24,9 +24,9 @@
 <section bind:this={section} id="two-sides" aria-labelledby="two-sides-heading">
 	<div class="container">
 		<div class="header fade-in" class:visible>
-			<span class="section-label">// 002 · Two Sides</span>
-			<h2 id="two-sides-heading">Two sides of<br /><em>the same girl</em></h2>
-			<p class="subtitle">They are not separate identities. They are the same signal, expressed differently.</p>
+			<span class="section-label">// 002 · two sides</span>
+			<h2 id="two-sides-heading">two sides of<br /><em>the same girl</em></h2>
+			<p class="subtitle">they're not separate things. same signal, different frequency.</p>
 		</div>
 
 		<div class="split" class:visible>

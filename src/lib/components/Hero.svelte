@@ -9,20 +9,22 @@
 	onMount(() => {
 		setTimeout(() => { visible = true; }, 100);
 
-		// Generate floating particles
-		const count = 40;
+		// Generate floating particles in trans flag colors
+		const count = 18;
+		const colors = ['var(--color-blue)', 'var(--color-pink)', 'rgba(255,255,255,0.7)'];
 		for (let i = 0; i < count; i++) {
 			const el = document.createElement('span');
 			el.className = 'particle';
-			const size = Math.random() * 2 + 1;
+			const size = Math.random() * 3 + 1.5;
 			el.style.cssText = `
 				width: ${size}px;
 				height: ${size}px;
 				left: ${Math.random() * 100}%;
 				top: ${Math.random() * 100}%;
 				animation-delay: ${Math.random() * 8}s;
-				animation-duration: ${6 + Math.random() * 10}s;
-				opacity: ${Math.random() * 0.5 + 0.1};
+				animation-duration: ${7 + Math.random() * 8}s;
+				opacity: ${Math.random() * 0.55 + 0.2};
+				background: ${colors[i % colors.length]};
 			`;
 			particleContainer?.appendChild(el);
 		}
@@ -38,25 +40,17 @@
 	<div class="bg-glow bg-glow--blue" aria-hidden="true"></div>
 
 	<div class="hero-inner" class:visible>
-		<!-- Avatar / silhouette -->
+		<!-- Portrait -->
 		<div class="portrait-wrap" aria-hidden="true">
-			<div class="portrait-ring"></div>
-			<div class="portrait-placeholder">
-				<!-- Replace with actual portrait image -->
-				<svg viewBox="0 0 200 260" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-					<ellipse cx="100" cy="90" rx="48" ry="52" fill="rgba(112,42,73,0.4)" stroke="rgba(245,169,184,0.3)" stroke-width="1"/>
-					<path d="M 30 260 Q 50 160 100 155 Q 150 160 170 260" fill="rgba(33,23,36,0.7)" stroke="rgba(245,169,184,0.2)" stroke-width="1"/>
-					<!-- Glasses hint -->
-					<rect x="68" y="82" width="24" height="12" rx="4" fill="none" stroke="rgba(245,169,184,0.5)" stroke-width="1.2"/>
-					<rect x="108" y="82" width="24" height="12" rx="4" fill="none" stroke="rgba(245,169,184,0.5)" stroke-width="1.2"/>
-					<line x1="92" y1="88" x2="108" y2="88" stroke="rgba(245,169,184,0.4)" stroke-width="1"/>
-					<!-- Circuit vines decorating bottom -->
-					<path d="M 20 240 L 40 220 L 40 210 L 60 210 L 70 200" stroke="rgba(91,206,250,0.2)" stroke-width="0.8" fill="none"/>
-					<circle cx="70" cy="200" r="2" fill="rgba(91,206,250,0.4)"/>
-					<path d="M 180 240 L 160 220 L 160 210 L 140 210 L 130 200" stroke="rgba(245,169,184,0.2)" stroke-width="0.8" fill="none"/>
-					<circle cx="130" cy="200" r="2" fill="rgba(245,169,184,0.4)"/>
-				</svg>
+			<div class="portrait-frame">
+				<div class="portrait-frame-inner">
+					<img src="/portrait.jpg" alt="Chloe" class="portrait-img" />
+				</div>
 			</div>
+			<span class="corner-heart tl" aria-hidden="true">♥</span>
+			<span class="corner-heart tr" aria-hidden="true">♥</span>
+			<span class="corner-heart bl" aria-hidden="true">♥</span>
+			<span class="corner-heart br" aria-hidden="true">♥</span>
 		</div>
 
 		<!-- Text content -->
@@ -93,7 +87,9 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		background: radial-gradient(ellipse 80% 60% at 50% 0%, var(--color-plum) 0%, var(--color-void) 70%);
+		background:
+			linear-gradient(180deg, rgba(91,206,250,0.45) 0%, rgba(91,206,250,0.22) 100%),
+			radial-gradient(ellipse 80% 60% at 50% 0%, var(--color-plum) 0%, var(--color-void) 70%);
 		overflow: hidden;
 		padding: 6rem 2rem 4rem;
 	}
@@ -162,39 +158,68 @@
 	.portrait-wrap {
 		flex-shrink: 0;
 		position: relative;
-		width: 260px;
-		height: 340px;
+		transform: rotate(-3deg);
+		filter: drop-shadow(0 12px 40px rgba(245, 169, 184, 0.35));
+		transition: transform 0.4s var(--ease-bounce);
 	}
 
-	.portrait-ring {
-		position: absolute;
-		inset: -8px;
-		border-radius: 50% 50% 48% 52% / 55% 55% 45% 45%;
-		border: 1px solid transparent;
-		background: linear-gradient(135deg, rgba(245,169,184,0.3), rgba(91,206,250,0.15), rgba(245,169,184,0.05)) border-box;
-		animation: breathe 5s ease-in-out infinite;
+	.portrait-wrap:hover {
+		transform: rotate(0deg) scale(1.02);
 	}
 
-	@keyframes breathe {
-		0%, 100% { box-shadow: 0 0 20px rgba(245,169,184,0.2); transform: scale(1); }
-		50%       { box-shadow: 0 0 48px rgba(245,169,184,0.4); transform: scale(1.015); }
+	.portrait-frame {
+		padding: 4px;
+		border-radius: 22px;
+		background: linear-gradient(
+			135deg,
+			#5BCEFA, #F5A9B8, #FFFFFF, #F5A9B8, #5BCEFA, #F5A9B8
+		);
+		background-size: 300% 300%;
+		animation: gradientShift 5s ease infinite, glowPulse 4s ease-in-out infinite;
 	}
 
-	.portrait-placeholder {
+	@keyframes gradientShift {
+		0%   { background-position: 0% 50%; }
+		50%  { background-position: 100% 50%; }
+		100% { background-position: 0% 50%; }
+	}
+
+	@keyframes glowPulse {
+		0%, 100% { filter: drop-shadow(0 0 10px rgba(245, 169, 184, 0.55)); }
+		50%       { filter: drop-shadow(0 0 22px rgba(91, 206, 250, 0.65)); }
+	}
+
+	.portrait-frame-inner {
+		border-radius: 19px;
+		overflow: hidden;
+		aspect-ratio: 3 / 4;
+		width: 240px;
+	}
+
+	.portrait-img {
 		width: 100%;
 		height: 100%;
-		background: linear-gradient(180deg, var(--color-plum) 0%, var(--color-charcoal) 100%);
-		border-radius: 50% 50% 48% 52% / 55% 55% 45% 45%;
-		overflow: hidden;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		border: 1px solid rgba(245, 169, 184, 0.12);
+		object-fit: cover;
+		display: block;
 	}
 
-	.portrait-placeholder svg {
-		width: 80%;
-		height: 80%;
+	/* Corner hearts */
+	.corner-heart {
+		position: absolute;
+		font-size: 1.3rem;
+		line-height: 1;
+		pointer-events: none;
+		animation: heartBeat 3s ease-in-out infinite;
+	}
+
+	.corner-heart.tl { top: -14px;  left: -12px;  color: #5BCEFA; animation-delay: 0s; }
+	.corner-heart.tr { top: -14px;  right: -12px; color: #F5A9B8; animation-delay: 0.6s; }
+	.corner-heart.bl { bottom: -14px; left: -12px;  color: #F5A9B8; animation-delay: 1.2s; }
+	.corner-heart.br { bottom: -14px; right: -12px; color: #5BCEFA; animation-delay: 1.8s; }
+
+	@keyframes heartBeat {
+		0%, 100% { transform: scale(1);   opacity: 0.75; }
+		50%       { transform: scale(1.4); opacity: 1; }
 	}
 
 	/* Text */

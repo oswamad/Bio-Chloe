@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#c064a0"/>
+      <stop offset="100%" stop-color="#28082a"/>
+    </linearGradient>
+    <linearGradient id="line" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#f5a9b8" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#f5a9b8" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#f5a9b8" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="400" fill="url(#bg)"/>
+  <!-- moon -->
+  <circle cx="220" cy="160" r="50" fill="rgba(245,169,184,0.1)" stroke="rgba(245,169,184,0.2)" stroke-width="1"/>
+  <circle cx="240" cy="150" r="40" fill="url(#bg)"/>
+  <!-- stars -->
+  <circle cx="120" cy="100" r="1.5" fill="rgba(245,169,184,0.5)"/>
+  <circle cx="300" cy="80" r="1" fill="rgba(245,169,184,0.4)"/>
+  <circle cx="80" cy="180" r="1" fill="rgba(245,169,184,0.3)"/>
+  <circle cx="340" cy="150" r="1.5" fill="rgba(245,169,184,0.4)"/>
+  <circle cx="150" cy="60" r="1" fill="rgba(245,169,184,0.35)"/>
+  <circle cx="320" cy="220" r="1" fill="rgba(245,169,184,0.3)"/>
+  <path d="M 20 215 Q 70 200 120 215 Q 170 230 220 215 Q 270 200 320 215 Q 355 224 380 215"
+        fill="none" stroke="url(#line)" stroke-width="1.2" opacity="0.6"/>
+  <text x="200" y="278" text-anchor="middle" font-family="Georgia, serif" font-style="italic" font-size="26" fill="white" opacity="0.9">The Marías</text>
+  <line x1="80" y1="294" x2="320" y2="294" stroke="rgba(245,169,184,0.3)" stroke-width="0.8"/>
+  <text x="200" y="314" text-anchor="middle" font-family="monospace" font-size="10" letter-spacing="4" fill="rgba(245,169,184,0.5)">ARTIST</text>
+</svg>

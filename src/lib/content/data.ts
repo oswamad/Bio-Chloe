@@ -6,27 +6,26 @@
 
 export const meta = {
 	name: 'Chloe',
-	tagline: 'Soft voice. Sharp mind. A little difficult to read.',
+	tagline: 'Gothic softness, digital traces, and late-night thoughts.',
 	description:
-		"I'm Chloe — a power integrity engineer, software builder, VR enthusiast, and gothic girl who spends far too much time analyzing technology, voices, lyrics, and the things people leave unsaid.",
+		"Hi, I'm Chloe — engineer by day, goth girl and VR gremlin by night. I like taking things apart, whether that's hardware, lyrics, or the way someone worded a message.",
 	pronouns: 'she/her',
 	location: 'Mexico',
 	languages: ['Spanish', 'English']
 };
 
 export const heroTags = [
-	'ENGINEER',
-	'VR GIRL',
-	'VOICE & IDENTITY',
-	'GOTHIC SOFTNESS',
-	'EMOTIONALLY LITERATE'
+	'she/her',
+	'VR Girl',
+	'Goth',
+	'México'
 ];
 
 export const about = {
 	paragraph1:
-		'I tend to understand the world by taking it apart — sometimes that means analyzing a motherboard, sometimes a voice, and sometimes a sentence someone said with just a little too much hesitation.',
+		"I'm Chloe. Trans, queer, a little goth, and probably overanalyzing something as you read this.",
 	paragraph2:
-		"I'm technical, introspective, queer, and quietly playful. I love dark aesthetics, soft femininity, virtual spaces, meaningful conversations, and anything that lets identity become something creative rather than fixed."
+		"I love dark spaces, soft music, long conversations, and VRChat at 2am. I notice details. It's a whole thing."
 };
 
 export const engineerSide = {
@@ -67,14 +66,14 @@ export const skills: { category: string; tags: string[] }[] = [
 ];
 
 export const voice = {
-	heading: 'Voice, Identity & Expression',
-	body: 'Voice became one of the places where engineering and identity unexpectedly met. It involves resonance, frequency, anatomy, imitation, expression, and hundreds of tiny adjustments — but it is also about learning what it feels like to hear yourself and finally recognize the girl speaking back.',
+	heading: 'voice & identity',
+	body: "voice training turned out to be one of those things that's equal parts technical and deeply personal. frequencies, resonance, muscle memory — but also the first time you hear yourself back and actually feel like that's you. it's a whole thing.",
 	descriptors: ['Feminine', 'Mature', 'Calm', 'Sensual', 'Melancholic', 'Gothic', 'Intimate', 'Resonant']
 };
 
 export const vrcSection = {
-	heading: 'VRChat & Digital Presence',
-	body: 'VRChat is not merely a game. It is a social and creative space where voice, movement, avatars, technology, identity, and human connection all meet in ways the physical world rarely allows.',
+	heading: 'VRChat',
+	body: "My favorite place. Custom avatars, full-body tracking, 2am conversations with people who get it. If you're ever there, come say hi.",
 	features: [
 		{ label: 'AVATAR SYSTEMS', detail: 'Custom avatars, expressions, dynamics' },
 		{ label: 'FULL-BODY TRACKING', detail: 'Legs, waist, elbows, knees' },
@@ -86,20 +85,21 @@ export const vrcSection = {
 };
 
 export const music = {
-	heading: 'Music & Inner World',
-	pullQuote: 'girl in red raised me emotionally.',
-	subtext: 'I dissect lyrics and glances. I speak in subtext. If you notice, you notice.',
+	heading: 'What I Listen To',
+	pullQuote: 'Girl in Red raised me emotionally.',
+	subtext: 'I dissect lyrics the same way I dissect circuits. I speak in subtext. If you notice, you notice.',
+	// To swap in your own photo: drop {slug}.jpg into static/music/ and set wiki: null
 	artists: [
-		'girl in red',
-		'Sir Chloe',
-		'Kikuo',
-		'Clairo',
-		'The Marías',
-		'Bratty',
-		'Cavetown',
-		'Vocaloid'
+		{ name: 'Girl in Red', slug: 'girl-in-red',  wiki: 'Girl_in_red',  color1: '#c0647a', color2: '#7a2040' },
+		{ name: 'Sir Chloe',   slug: 'sir-chloe',    wiki: 'Sir_Chloe',    color1: '#6478c0', color2: '#2a3a7a' },
+		{ name: 'Kikuo',       slug: 'kikuo',         wiki: 'Kikuo_(musician)',        color1: '#9064c0', color2: '#3a1a7a' },
+		{ name: 'Clairo',      slug: 'clairo',        wiki: 'Clairo',       color1: '#c09664', color2: '#7a4a20' },
+		{ name: 'The Marías',  slug: 'the-marias',    wiki: 'The_Marías',   color1: '#c064a0', color2: '#7a1a5a' },
+		{ name: 'Bratty',      slug: 'bratty',        wiki: 'Bratty_(musician)', color1: '#c06464', color2: '#7a2020' },
+		{ name: 'Cavetown',    slug: 'cavetown',      wiki: 'Cavetown',     color1: '#64a0c0', color2: '#1a4a7a' },
+		{ name: 'Vocaloid',    slug: 'vocaloid',      wiki: 'Hatsune_Miku',     color1: '#64c0b4', color2: '#1a7a6a' }
 	],
-	genres: ['Alternative', 'Indie', 'Melancholic', 'Queer', 'Emotionally Layered']
+	genres: ['Alternative', 'Indie', 'Melancholic', 'Queer', 'Emotionally Devastating']
 };
 
 export const details: { label: string; value: string }[] = [
@@ -116,10 +116,10 @@ export const details: { label: string; value: string }[] = [
 ];
 
 export const contact = {
-	closing: "You can say hello. I'll probably notice more about the way you say it than you intended.",
+	closing: "You can say hi. Fair warning though — I will absolutely overanalyze how you said it.",
 	links: [
-		{ label: 'GitHub', href: 'https://github.com/', icon: 'github' },
-		{ label: 'Twitter / X', href: 'https://twitter.com/', icon: 'twitter' },
-		{ label: 'VRChat', href: 'https://vrchat.com/', icon: 'vr' }
+		{ label: 'VRChat',   href: 'https://vrchat.com/home/user/usr_c44a29b9-5e76-4a34-bd4d-8a63b52d8e16', icon: 'vr' },
+		{ label: 'Spotify',  href: 'https://open.spotify.com/playlist/1xzHqw4uGUmRJOX5isFcZ8', icon: 'spotify' },
+		{ label: 'Discord',  href: 'https://discordapp.com/users/722632688468492311', icon: 'discord' }
 	]
 };

@@ -23,10 +23,10 @@
 <section bind:this={section} id="engineering" aria-labelledby="engineering-heading">
 	<div class="container">
 		<div class="header fade-in" class:visible>
-			<span class="section-label">// 003 · Engineering</span>
-			<h2 id="engineering-heading">Built at the intersection<br />of <em>hardware and software</em></h2>
+			<span class="section-label">// 003 · engineering</span>
+			<h2 id="engineering-heading">living between<br /><em>hardware and software</em></h2>
 			<p class="subtitle">
-				Power integrity engineer and software-tool builder. The curiosity that drives both is the same.
+				power integrity engineer by title, tool builder by habit. the curiosity driving both is exactly the same.
 			</p>
 		</div>
 

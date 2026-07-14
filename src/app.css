@@ -77,6 +77,26 @@ body {
 	overflow-x: hidden;
 }
 
+/* Trans flag stripe bar — pinned to the top of the viewport */
+body::before {
+	content: '';
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 6px;
+	background: linear-gradient(
+		90deg,
+		#5BCEFA 0%,   #5BCEFA 20%,
+		#F5A9B8 20%,  #F5A9B8 40%,
+		#FFFFFF 40%,  #FFFFFF 60%,
+		#F5A9B8 60%,  #F5A9B8 80%,
+		#5BCEFA 80%,  #5BCEFA 100%
+	);
+	z-index: 9999;
+	pointer-events: none;
+}
+
 /* Restore cursor on touch devices */
 @media (hover: none) {
 	body { cursor: auto; }

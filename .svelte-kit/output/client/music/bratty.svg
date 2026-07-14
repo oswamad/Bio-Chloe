@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#c06464"/>
+      <stop offset="100%" stop-color="#2a0808"/>
+    </linearGradient>
+    <linearGradient id="line" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#ff9090" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#ff9090" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#ff9090" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="400" fill="url(#bg)"/>
+  <!-- diagonal lines -->
+  <line x1="0" y1="100" x2="400" y2="300" stroke="rgba(255,144,144,0.07)" stroke-width="40"/>
+  <line x1="-60" y1="0" x2="340" y2="400" stroke="rgba(255,144,144,0.05)" stroke-width="30"/>
+  <!-- star burst -->
+  <g transform="translate(200,165)" opacity="0.2">
+    <line x1="0" y1="-40" x2="0" y2="40" stroke="#ff9090" stroke-width="1.5"/>
+    <line x1="-40" y1="0" x2="40" y2="0" stroke="#ff9090" stroke-width="1.5"/>
+    <line x1="-28" y1="-28" x2="28" y2="28" stroke="#ff9090" stroke-width="1"/>
+    <line x1="28" y1="-28" x2="-28" y2="28" stroke="#ff9090" stroke-width="1"/>
+    <circle r="6" fill="#ff9090"/>
+  </g>
+  <path d="M 20 220 L 80 200 L 120 220 L 160 195 L 200 215 L 240 195 L 280 215 L 320 200 L 360 215 L 380 210"
+        fill="none" stroke="url(#line)" stroke-width="1.5" opacity="0.6"/>
+  <text x="200" y="278" text-anchor="middle" font-family="Georgia, serif" font-style="italic" font-size="28" fill="white" opacity="0.9">Bratty</text>
+  <line x1="80" y1="294" x2="320" y2="294" stroke="rgba(255,144,144,0.3)" stroke-width="0.8"/>
+  <text x="200" y="314" text-anchor="middle" font-family="monospace" font-size="10" letter-spacing="4" fill="rgba(255,144,144,0.5)">ARTIST</text>
+</svg>
