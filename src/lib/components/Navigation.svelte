@@ -1,8 +1,7 @@
 <script lang="ts">
 	const navLinks = [
-		{ href: '#about',   label: 'about' },
-		{ href: '#music',   label: 'music' },
-		{ href: '#contact', label: 'say hi' }
+		{ href: '#music',   label: 'Music' },
+		{ href: '#contact', label: 'Say Hi' }
 	];
 
 	let scrolled = false;

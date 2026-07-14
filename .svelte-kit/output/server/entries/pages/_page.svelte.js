@@ -8,9 +8,8 @@ function CustomCursor($$renderer, $$props) {
 function Navigation($$renderer, $$props) {
   $$renderer.component(($$renderer2) => {
     const navLinks = [
-      { href: "#about", label: "about" },
-      { href: "#music", label: "music" },
-      { href: "#contact", label: "say hi" }
+      { href: "#music", label: "Music" },
+      { href: "#contact", label: "Say Hi" }
     ];
     let scrolled = false;
     $$renderer2.push(`<nav aria-label="Main navigation"${attr_class("svelte-ocbj1u", void 0, { "scrolled": scrolled })}><span class="nav-name mono svelte-ocbj1u">Chloe</span> <ul class="svelte-ocbj1u"><!--[-->`);
@@ -47,14 +46,6 @@ const heroTags = [
   "Goth",
   "México"
 ];
-const about = {
-  paragraph1: "I'm Chloe. Trans, queer, a little goth, and probably overanalyzing something as you read this.",
-  paragraph2: "I love dark spaces, soft music, long conversations, and VRChat at 2am. I notice details. It's a whole thing."
-};
-const vrcSection = {
-  heading: "VRChat",
-  body: "My favorite place. Custom avatars, full-body tracking, 2am conversations with people who get it. If you're ever there, come say hi."
-};
 const music = {
   heading: "What I Listen To",
   pullQuote: "Girl in Red raised me emotionally.",
@@ -94,12 +85,6 @@ function Hero($$renderer, $$props) {
     $$renderer2.push(`<!----></div></section>`);
   });
 }
-function About($$renderer, $$props) {
-  $$renderer.component(($$renderer2) => {
-    let visible = false;
-    $$renderer2.push(`<section id="about" aria-labelledby="about-heading" class="svelte-7hpc9t"><div class="container svelte-7hpc9t"><div${attr_class("content fade-in svelte-7hpc9t", void 0, { "visible": visible })}><div class="main-col svelte-7hpc9t"><div class="block svelte-7hpc9t"><span class="section-label">// About Me</span> <h2 id="about-heading" class="svelte-7hpc9t">A girl who notices<br/><em class="svelte-7hpc9t">everything.</em></h2> <p class="svelte-7hpc9t">${escape_html(about.paragraph1)}</p> <p class="svelte-7hpc9t">${escape_html(about.paragraph2)}</p></div> <div class="divider svelte-7hpc9t" aria-hidden="true"></div> <div class="block svelte-7hpc9t"><span class="section-label">// VRChat</span> <h2 id="vr-heading" class="svelte-7hpc9t">${escape_html(vrcSection.heading)}</h2> <p class="svelte-7hpc9t">${escape_html(vrcSection.body)}</p></div></div> <div class="shark-wrap svelte-7hpc9t" aria-label="Blåhaj plushie"><img src="/shark.jpg" alt="Blåhaj — the beloved IKEA shark plushie" class="shark-img svelte-7hpc9t"/> <p class="shark-caption mono svelte-7hpc9t">blåhaj 🩵</p></div></div></div></section>`);
-  });
-}
 function Music($$renderer, $$props) {
   $$renderer.component(($$renderer2) => {
     let visible = false;
@@ -122,14 +107,14 @@ function Music($$renderer, $$props) {
 function Contact($$renderer, $$props) {
   $$renderer.component(($$renderer2) => {
     let visible = false;
-    $$renderer2.push(`<section id="contact" aria-labelledby="contact-heading" class="svelte-wt4tt0"><div class="glow-layer svelte-wt4tt0" aria-hidden="true"></div> <div class="container svelte-wt4tt0"><div${attr_class("contact-inner fade-in svelte-wt4tt0", void 0, { "visible": visible })}><span class="section-label">// 008 · say hello</span> <h2 id="contact-heading"><span class="name-accent svelte-wt4tt0">${escape_html(meta.name)}</span></h2> <p class="closing svelte-wt4tt0">${escape_html(contact.closing)}</p> <nav class="social-links svelte-wt4tt0" aria-label="Social and contact links"><!--[-->`);
+    $$renderer2.push(`<section id="contact" aria-labelledby="contact-heading" class="svelte-wt4tt0"><div class="glow-layer svelte-wt4tt0" aria-hidden="true"></div> <div class="container svelte-wt4tt0"><div${attr_class("contact-inner fade-in svelte-wt4tt0", void 0, { "visible": visible })}><span class="section-label">// say hello</span> <h2 id="contact-heading"><span class="name-accent svelte-wt4tt0">${escape_html(meta.name)}</span></h2> <p class="closing svelte-wt4tt0">${escape_html(contact.closing)}</p> <nav class="social-links svelte-wt4tt0" aria-label="Social and contact links"><!--[-->`);
     const each_array = ensure_array_like(contact.links);
     for (let $$index = 0, $$length = each_array.length; $$index < $$length; $$index++) {
       let link = each_array[$$index];
       $$renderer2.push(`<a${attr("href", link.href)} class="social-link svelte-wt4tt0" target="_blank" rel="noopener noreferrer"${attr("aria-label", `${stringify(link.label)} (opens in new tab)`)}>`);
       if (link.icon === "vr") {
         $$renderer2.push("<!--[0-->");
-        $$renderer2.push(`<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 3-3h14a3 3 0 0 1 3 3v6a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3V9z"></path><circle cx="9" cy="12" r="2"></circle><circle cx="15" cy="12" r="2"></circle></svg>`);
+        $$renderer2.push(`<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 3-3h14a3 3 0 0 1 3 3v6a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3V9z"></path><circle cx="9" cy="12" r="2"></circle><circle cx="15" cy="12" r="2"></circle></svg>`);
       } else if (link.icon === "spotify") {
         $$renderer2.push("<!--[1-->");
         $$renderer2.push(`<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm4.586 14.424a.623.623 0 0 1-.857.207c-2.348-1.435-5.304-1.76-8.785-.964a.623.623 0 1 1-.277-1.215c3.809-.87 7.077-.496 9.712 1.115a.623.623 0 0 1 .207.857zm1.223-2.722a.78.78 0 0 1-1.072.257c-2.687-1.652-6.786-2.131-9.965-1.166a.78.78 0 1 1-.453-1.492c3.633-1.103 8.149-.568 11.233 1.329a.78.78 0 0 1 .257 1.072zm.105-2.835C14.692 8.95 9.375 8.775 6.297 9.71a.937.937 0 1 1-.543-1.794c3.532-1.07 9.404-.862 13.115 1.338a.937.937 0 0 1-.955 1.613z"></path></svg>`);
@@ -153,10 +138,8 @@ function _page($$renderer) {
   CustomCursor($$renderer);
   $$renderer.push(`<!----> `);
   Navigation($$renderer);
-  $$renderer.push(`<!----> <main id="main-content" class="svelte-1uha8ag">`);
+  $$renderer.push(`<!----> <div class="page-gothic-transit svelte-1uha8ag" aria-hidden="true"><span class="heavy-goth cyan svelte-1uha8ag" style="left: 10%; animation-delay: 0s; animation-duration: 18s;">✟</span> <span class="heavy-goth pink lg svelte-1uha8ag" style="left: 25%; animation-delay: 3s; animation-duration: 15s;">✧</span> <span class="heavy-goth white svelte-1uha8ag" style="left: 45%; animation-delay: 8s; animation-duration: 22s;">✟</span> <span class="heavy-goth pink svelte-1uha8ag" style="left: 65%; animation-delay: 1.5s; animation-duration: 19s;">✟</span> <span class="heavy-goth cyan lg svelte-1uha8ag" style="left: 80%; animation-delay: 5s; animation-duration: 25s;">☾</span> <span class="heavy-goth white svelte-1uha8ag" style="left: 35%; animation-delay: 11s; animation-duration: 17s;">✟</span> <span class="heavy-goth cyan svelte-1uha8ag" style="left: 55%; animation-delay: 9s; animation-duration: 21s;">✟</span> <span class="heavy-goth pink lg svelte-1uha8ag" style="left: 90%; animation-delay: 13s; animation-duration: 28s;">✧</span></div> <main id="main-content" class="svelte-1uha8ag">`);
   Hero($$renderer);
-  $$renderer.push(`<!----> `);
-  About($$renderer);
   $$renderer.push(`<!----> `);
   Music($$renderer);
   $$renderer.push(`<!----> `);

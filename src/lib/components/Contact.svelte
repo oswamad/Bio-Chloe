@@ -25,7 +25,7 @@
 
 	<div class="container">
 		<div class="contact-inner fade-in" class:visible>
-			<span class="section-label">// 008 · say hello</span>
+			<span class="section-label">// say hello</span>
 
 			<h2 id="contact-heading">
 				<span class="name-accent">{meta.name}</span>
@@ -43,7 +43,7 @@
 						aria-label="{link.label} (opens in new tab)"
 					>
 						{#if link.icon === 'vr'}
-							<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+							<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
 								<path d="M2 9a3 3 0 0 1 3-3h14a3 3 0 0 1 3 3v6a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3V9z"/>
 								<circle cx="9" cy="12" r="2"/><circle cx="15" cy="12" r="2"/>
 							</svg>
