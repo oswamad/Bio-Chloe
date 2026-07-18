@@ -12,10 +12,9 @@ const config = {
 			precompress: false,
 			strict: true
 		}),
-		// Change this to your GitHub repo name if deploying as a project page
-		// e.g. paths: { base: '/my-repo' }
+		// Using custom domain - assets are at root level, not /Bio-Chloe/
 		paths: {
-			base: '/Bio-Chloe'
+			base: ''
 		}
 	}
 };
